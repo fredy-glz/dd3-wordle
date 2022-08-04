@@ -12,15 +12,15 @@ type KeyboardProps = {
 };
 
 const Keyboard = ({ usedKeys, handleKeyPressed }: KeyboardProps) => {
-  const handleEnter = () => {
+  const handleEnter = (): void => {
     handleKeyPressed(Key.ENTER);
   };
 
-  const handleBackspace = () => {
+  const handleBackspace = (): void => {
     handleKeyPressed(Key.BACKSPACE);
   };
 
-  const handleKey = (e: any) => {
+  const handleKey = (e: any): void => {
     handleKeyPressed(e.target.textContent);
   };
 

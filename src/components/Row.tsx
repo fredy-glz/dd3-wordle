@@ -27,20 +27,23 @@ const Row = ({ word, currentWord, solution }: RowProps) => {
   }
 
   if (currentWord) {
-    let letters = currentWord.split('');
+    let letters: string[] = currentWord.split('');
 
     return (
       <div className="flex justify-center">
         {letters.map((l, i) => (
           <div
             key={i}
-            className="border dark:border-slate-800 m-1 rounded box text-4xl font-bold text-center"
+            className="border dark:border-slate-800 dark:text-white m-1 rounded box text-4xl font-bold text-center"
           >
             {l}
           </div>
         ))}
         {[...Array(5 - letters.length)].map((_, i) => (
-          <div key={i} className="border dark:border-slate-800 m-1 rounded box"></div>
+          <div
+            key={i}
+            className="border dark:border-slate-800 m-1 rounded box"
+          ></div>
         ))}
       </div>
     );

@@ -17,26 +17,29 @@ const Header = ({ setShowHowPlayModal, setShowStaticsModal }: HeaderProps) => {
   const [isSelected, setIsSelected] = useState<boolean>(true);
   const [setTheme, colorTheme] = useDarkMode();
 
-  const handleHowToPlayModal = () => {
+  const handleHowToPlayModal = (): void => {
     setShowHowPlayModal((prev: boolean) => {
       return !prev;
     });
   };
 
-  const handleStaticsModal = () => {
+  const handleStaticsModal = (): void => {
     setShowStaticsModal((prev: boolean) => {
       return !prev;
     });
   };
 
-  const handleDarkMode = () => {
+  const handleDarkMode = (): void => {
     setIsSelected(!isSelected);
     setTheme(colorTheme);
   };
 
   return (
     <div className="flex header__container mx-auto items-center rounded-md justify-between p-4 my-14 dark:bg-slate-700">
-      <div className="text-xl header__icon dark:text-slate-200" onClick={handleHowToPlayModal}>
+      <div
+        className="text-xl header__icon dark:text-slate-200"
+        onClick={handleHowToPlayModal}
+      >
         <FontAwesomeIcon icon={faCircleQuestion} />
       </div>
       <p className="font-bold text-3xl dark:text-slate-200">WORDLE</p>

@@ -20,15 +20,15 @@ const Wordle = () => {
   const [showStaticsModal, setShowStaticsModal] = useState<boolean>(false);
   const [showHowPlayModal, setShowHowPlayModal] = useState<boolean>(false);
 
-  const handleKeyup = (event: KeyboardEvent) => {
-    const key = event.key.toUpperCase();
+  const handleKeyup = (event: KeyboardEvent): void => {
+    const key: string = event.key.toUpperCase();
     handleKeyPressed(key);
   };
 
   const handleKeyPressed = async (key: string) => {
     if (key === Key.ENTER) {
       if (turn < 7 && currentWord.length === 5) {
-        const valid = await isValidWord(currentWord);
+        const valid: any = await isValidWord(currentWord);
         if (!valid) {
           setValidWord(true);
           return;
@@ -52,7 +52,7 @@ const Wordle = () => {
       setIsCorrect(true);
     }
     setCompletedWords((prevWords) => {
-      const newWords = [...prevWords];
+      const newWords: string[] = [...prevWords];
       newWords[turn] = currentWord;
       return newWords;
     });
@@ -70,7 +70,7 @@ const Wordle = () => {
     setCurrentWord('');
   };
 
-  const handleClean = () => {
+  const handleClean = (): void => {
     setValidWord(false);
     setCurrentWord('');
     setCompletedWords([...Array(5)]);
@@ -84,7 +84,7 @@ const Wordle = () => {
   if (isCorrect) {
     const victorys: number | string | null =
       window.localStorage.getItem('WORDLE_VICTORYS');
-    let newVictorys = (victorys && parseInt(victorys) + 1) || 0;
+    let newVictorys: number = (victorys && parseInt(victorys) + 1) || 0;
     window.localStorage.setItem('WORDLE_VICTORYS', newVictorys?.toString());
 
     const plays: number | string | null =
@@ -101,7 +101,7 @@ const Wordle = () => {
   if (turn > 4) {
     const plays: number | string | null =
       window.localStorage.getItem('WORDLE_PLAYS');
-    let newPlays = (plays && parseInt(plays) + 1) || 0;
+    let newPlays: number = (plays && parseInt(plays) + 1) || 0;
     window.localStorage.setItem('WORDLE_PLAYS', newPlays?.toString());
 
     setTimeout(() => {
@@ -132,12 +132,11 @@ const Wordle = () => {
   }, []);
 
   return (
-    <div className="dark:bg-slate-800 h-screen border border-transparent">
+    <div className="dark:bg-slate-800 lg:h-screen h-full border border-transparent">
       <Header
         setShowHowPlayModal={setShowHowPlayModal}
         setShowStaticsModal={setShowStaticsModal}
       />
-      {solution}
       {validWord && <p className="block text-center my-2">Is'n a valid word</p>}
       <Board
         currentWord={currentWord}
@@ -148,7 +147,6 @@ const Wordle = () => {
       <Keyboard usedKeys={usedKeys} handleKeyPressed={handleKeyPressed} />
       {showStaticsModal && (
         <StaticsModal
-          isCorrect={isCorrect}
           turn={turn}
           solution={solution}
           handleGetWord={handleGetWord}

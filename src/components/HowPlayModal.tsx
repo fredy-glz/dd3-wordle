@@ -5,7 +5,7 @@ type HeaderProps = {
 };
 
 export const HowPlayModal = ({ setShowHowPlayModal }: HeaderProps) => {
-  const handleShowHowToPlayModal = () => {
+  const handleShowHowToPlayModal = (): void => {
     setShowHowPlayModal((prev: boolean) => {
       return !prev;
     });
@@ -13,7 +13,9 @@ export const HowPlayModal = ({ setShowHowPlayModal }: HeaderProps) => {
   return (
     <div className="bg-slate-100/75 dark:bg-slate-800/75 w-screen h-screen fixed justify-center items-center top-0 left-0 flex">
       <div className="border-2 border-black bg-slate-100 dark:bg-slate-800 dark:border-white dark:border info__modal rounded-lg px-8 py-8">
-        <h2 className="font-bold text-3xl text-center py-4 dark:text-white">Cómo jugar</h2>
+        <h2 className="font-bold text-3xl text-center py-4 dark:text-white">
+          Cómo jugar
+        </h2>
         <p className="text-base">
           <span className="block my-4 dark:text-white">
             Adivina la palabra oculta en cinco intentos.
@@ -26,7 +28,9 @@ export const HowPlayModal = ({ setShowHowPlayModal }: HeaderProps) => {
             qué tan cerca estás de acertar la palabra.
           </span>
         </p>
-        <span className="text-base font-bold block my-4 dark:text-white">Ejemplos</span>
+        <span className="text-base font-bold block my-4 dark:text-white">
+          Ejemplos
+        </span>
         <div className="flex justify-evenly">
           <div className="border-black info__box border info__box--green rounded my-4 text-4xl text-center font-bold dark:text-white">
             G
@@ -93,8 +97,15 @@ export const HowPlayModal = ({ setShowHowPlayModal }: HeaderProps) => {
           Puede haber letras repetidas. Las pistas son independientes para cada
           letra.
         </p>
-        <p className="block my-6 text-center dark:text-white">¡Una palabra nueva cada 5 minutos!</p>
-        <button className='info__box--green text-white mx-auto block rounded py-2 font-bold text-2xl px-14' onClick={handleShowHowToPlayModal}>¡JUGAR!</button>
+        <p className="block my-6 text-center dark:text-white">
+          ¡Una palabra nueva cada 5 minutos!
+        </p>
+        <button
+          className="info__box--green text-white mx-auto block rounded py-2 font-bold text-2xl px-14"
+          onClick={handleShowHowToPlayModal}
+        >
+          ¡JUGAR!
+        </button>
       </div>
     </div>
   );
