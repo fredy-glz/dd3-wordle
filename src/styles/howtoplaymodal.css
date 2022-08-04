@@ -1,0 +1,24 @@
+.info__modal {
+  width: 546px;
+  height: 818px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.info__box {
+  width: 76px;
+  height: 76px;
+  line-height: 76px;
+}
+
+.info__box--green {
+  background-color: rgba(102, 160, 96, 1);
+}
+
+.info__box--yellow {
+  background-color: rgba(206, 176, 44, 1);
+}
+
+.info__box--gray {
+  background-color: rgba(147, 155, 159, 1);
+}

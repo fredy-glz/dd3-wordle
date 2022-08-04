@@ -1,0 +1,41 @@
+.keyboard__container {
+  background-color: rgba(218, 220, 224, 0.3);
+  max-width: 619px;
+}
+
+.keyboard__key {
+  width: 44.67px;
+  height: 51.05px;
+  background-color: rgba(211, 214, 218, 1);
+  color: rgba(86, 87, 94, 1);
+  line-height: 51.05px;
+}
+
+.keyboard__key--enter {
+  height: 51.05px;
+  background-color: rgba(211, 214, 218, 1);
+  color: rgba(86, 87, 94, 1);
+  line-height: 51.05px;
+}
+
+.keyboard__key--delete {
+  height: 51.05px;
+  background-color: rgba(211, 214, 218, 1);
+  color: rgba(86, 87, 94, 1);
+  line-height: 51.05px;
+}
+
+.bg-yellow {
+  background-color: rgba(206, 176, 44, 1) !important;
+  color: #fff;
+}
+
+.bg-green {
+  background-color: rgba(102, 160, 96, 1) !important;
+  color: #fff;
+}
+
+.bg-gray {
+  background-color: rgba(147, 155, 159, 1) !important;
+  color: #fff;
+}

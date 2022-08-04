@@ -1,0 +1,22 @@
+.box {
+  width: 75px;
+  height: 75px;
+  line-height: 75px;
+  background-color: rgba(147, 155, 159, 0.3);
+  color: rgba(86, 87, 94, 1);
+}
+
+.bg-yellow {
+  background-color: rgba(206, 176, 44, 1);
+  color: #fff;
+}
+
+.bg-green {
+  background-color: rgba(102, 160, 96, 1);
+  color: #fff;
+}
+
+.bg-gray {
+  background-color: rgba(147, 155, 159, 1);
+  color: #fff;
+}

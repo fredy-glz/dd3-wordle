@@ -1,0 +1,9 @@
+.header__container {
+  background-color: rgba(218, 220, 224, 0.3);
+  max-width: 619px;
+}
+
+.header__icon {
+  color: rgba(129, 129, 129, 1);
+}
+

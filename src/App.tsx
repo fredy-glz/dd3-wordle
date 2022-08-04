@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Wordle from './components/Wordle';
+import { useEffect } from 'react';
 
-function App() {
+const App = () => {
+  useEffect(() => {
+    if (!window.localStorage.getItem('WORDLE_VICTORYS')) {
+      window.localStorage.setItem('WORDLE_VICTORYS', '0');
+    }
+    if (!window.localStorage.getItem('WORDLE_PLAYS')) {
+      window.localStorage.setItem('WORDLE_PLAYS', '0');
+    }
+    if (!window.localStorage.getItem('WORDLE_INFO')) {
+      window.localStorage.setItem('WORDLE_INFO', 'false');
+    }
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Wordle />
+    </>
   );
-}
+};
 
 export default App;

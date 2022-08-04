@@ -1,0 +1,12 @@
+.bg-modal {
+  background-color: rgba(243, 243, 243, 1);
+}
+
+.modal {
+  width: 446px;
+  height: 450px;
+}
+
+.bg-green {
+  background-color: rgba(102, 160, 96, 1);
+}
